@@ -1,12 +1,13 @@
 import Banner from "@/components/homePage/Banner";
 import Stats from "@/components/homePage/Stats";
+import TrendingApps from "@/components/homePage/TrendingApps";
 
 export default function Home() {
   return (
     <div>
       <Banner />
       <Stats />
-      <h2>Home Page</h2>
+      <TrendingApps />
     </div>
   );
 }
