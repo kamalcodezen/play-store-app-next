@@ -1,0 +1,33 @@
+import { Suspense } from "react";
+import TrendingAppsData from "./TrendingAppsData";
+import LoadingSkeleton from "./LoadingTrendingApps";
+import Link from "next/link";
+
+// Main Component
+const TrendingApps = () => {
+  return (
+    <div className="container mx-auto my-[60px]">
+      {/* Section Header */}
+      <div className="mb-8 text-center">
+        <h2 className="font-bold text-4xl">Trending Apps</h2>
+
+        <p className="text-gray-600">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+      </div>
+
+      {/* Suspense Loading */}
+      <Suspense fallback={<LoadingSkeleton />}>
+        <TrendingAppsData />
+      </Suspense>
+
+      <div className="text-center mt-4">
+        <Link href={"/apps"}>
+          <button className="btn bg-purple-500 text-white">View All</button>
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default TrendingApps;
