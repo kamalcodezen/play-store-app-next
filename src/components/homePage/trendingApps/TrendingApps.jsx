@@ -28,9 +28,17 @@ const TrendingApps = ({ from }) => {
       </Suspense>
 
       <div className="text-center mt-4">
-        <Link href={"/apps"}>
-          <button className="btn bg-purple-500 text-white">View All</button>
-        </Link>
+        {from === "allApps" ? (
+          <Link href={"/"}>
+            <button className="btn bg-purple-500 text-white">
+              Back to home
+            </button>
+          </Link>
+        ) : (
+          <Link href={"/apps"}>
+            <button className="btn bg-purple-500 text-white">View All</button>
+          </Link>
+        )}
       </div>
     </div>
   );
