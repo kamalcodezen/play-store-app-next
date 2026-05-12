@@ -6,10 +6,11 @@ import { toast } from "react-toastify";
 
 const InstallToggleButton = ({ app }) => {
   const { setInstall, install } = useContext(installAppContext);
-  // console.log(install, "button");
+
+  // Check already installed
+  const isExitsApp = install.find((a) => a.id == app.id);
 
   const handleInstall = (apps) => {
-    const isExitsApp = install.find((a) => a.id == apps.id);
     if (isExitsApp) {
       toast.warning(`${apps.title} already added`);
       return;
@@ -22,10 +23,11 @@ const InstallToggleButton = ({ app }) => {
   return (
     <div className="flex items-center justify-between">
       <button
+        disabled={isExitsApp ? true : false}
         onClick={() => handleInstall(app)}
         className="btn btn-accent font-semibold text-xl"
       >
-        Install
+        {isExitsApp ? "Installed" : "Install"}
       </button>
     </div>
   );
