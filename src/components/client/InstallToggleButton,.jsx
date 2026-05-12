@@ -5,7 +5,7 @@ import { useContext } from "react";
 
 const InstallToggleButton = ({ app }) => {
   const { setInstall, install } = useContext(installAppContext);
-  console.log(install, "button");
+    console.log(install, "button");
 
   const handleInstall = (apps) => {
     setInstall([...install, apps]);
