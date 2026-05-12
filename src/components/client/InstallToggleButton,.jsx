@@ -4,6 +4,9 @@ import { installAppContext } from "@/context/InstallContext";
 import { useContext } from "react";
 import { toast } from "react-toastify";
 
+
+
+
 const InstallToggleButton = ({ app }) => {
   const { setInstall, install } = useContext(installAppContext);
 

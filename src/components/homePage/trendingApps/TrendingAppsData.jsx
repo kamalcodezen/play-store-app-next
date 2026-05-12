@@ -6,7 +6,7 @@ const TrendingAppsData = async ({ from }) => {
   // console.log(from, "from");
 
   // Fake loading delay
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  await new Promise((resolve) => setTimeout(resolve, 1500));
 
   // console.log(dataFetch,"check")
   return (

@@ -1,8 +1,25 @@
+
 import InstallToggleButton from "@/components/client/InstallToggleButton,";
 import dataFetch from "@/data/data.json";
 import Image from "next/image";
 import Link from "next/link";
 import { FaBuilding, FaDownload, FaStar } from "react-icons/fa";
+
+export async function generateMetadata({ params }) {
+  const { appsId } = await params;
+
+  const app = dataFetch.find((a) => a.id === parseInt(appsId));
+  return {
+    title: app.title,
+    description: app.description,
+  };
+}
+
+// if (!app) {
+//  return {
+//   title: "App Not Found",
+//  }
+// }
 
 const AppsDetails = async ({ params }) => {
   const { appsId } = await params;
