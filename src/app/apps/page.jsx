@@ -1,7 +1,9 @@
+import TrendingApps from "@/components/homePage/trendingApps/TrendingApps";
+
 const AppsPage = () => {
   return (
     <div>
-      <h2>Apps page</h2>
+      <TrendingApps from="allApps" />
     </div>
   );
 };
