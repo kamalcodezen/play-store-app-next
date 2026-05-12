@@ -5,7 +5,7 @@ import Link from "next/link";
 
 // Main Component
 const TrendingApps = ({ from }) => {
-  console.log(from, "from");
+  // console.log(from, "from");
 
   return (
     <div className="container mx-auto my-[60px]">

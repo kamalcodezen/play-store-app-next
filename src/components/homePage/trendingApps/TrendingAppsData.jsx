@@ -3,7 +3,7 @@ import AppCard from "@/components/ui/AppCard";
 
 // Async Server Component
 const TrendingAppsData = async ({ from }) => {
-  console.log(from, "from");
+  // console.log(from, "from");
 
   // Fake loading delay
   await new Promise((resolve) => setTimeout(resolve, 2000));
