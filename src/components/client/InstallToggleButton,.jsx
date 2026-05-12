@@ -2,13 +2,21 @@
 
 import { installAppContext } from "@/context/InstallContext";
 import { useContext } from "react";
+import { toast } from "react-toastify";
 
 const InstallToggleButton = ({ app }) => {
   const { setInstall, install } = useContext(installAppContext);
-    console.log(install, "button");
+  // console.log(install, "button");
 
   const handleInstall = (apps) => {
-    setInstall([...install, apps]);
+    const isExitsApp = install.find((a) => a.id == apps.id);
+    if (isExitsApp) {
+      toast.warning(`${apps.title} already added`);
+      return;
+    } else {
+      setInstall([...install, apps]);
+      toast.success(`${apps.title} added`);
+    }
   };
 
   return (

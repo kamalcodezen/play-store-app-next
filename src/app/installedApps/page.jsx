@@ -3,6 +3,7 @@
 import { installAppContext } from "@/context/InstallContext";
 import Image from "next/image";
 import { useContext } from "react";
+import { toast } from "react-toastify";
 
 const InstallApp = () => {
   const { setInstall, install } = useContext(installAppContext);
@@ -10,6 +11,7 @@ const InstallApp = () => {
   const handleUninstall = (app) => {
     const exitsApp = install.filter((a) => a.id !== app.id);
     setInstall(exitsApp);
+    toast.error(`${app.title} uninstall`);
   };
 
   return (
